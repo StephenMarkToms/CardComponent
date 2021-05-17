@@ -1,21 +1,49 @@
 <template>
-  <div class="border rounded-lg shadow-lg">
-    <div class="aspect-w-3 aspect-h-2">
-      <img
-        class="object-cover rounded-t-lg"
-        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixqx=2fQPsE3vrn&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=8&amp;w=1024&amp;h=1024&amp;q=80"
-        alt=""
-      />
+  <div
+    class="
+      border
+      rounded-lg
+      hover:shadow-lg
+      transition-shadow
+      duration-200
+      cursor-pointer
+      font-roboto
+    "
+  >
+    <div v-if="cardData.cover" class="aspect-w-3 aspect-h-2">
+      <img class="object-cover rounded-t-lg" :src="cardData.cover" alt="" />
     </div>
-    <div class="p-3">
-      <div class="font-bold text-2xl font-lora">Card Title</div>
-      <div>Card subtitle</div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
+    <div class="p-4">
+      <div class="flex my-4">
+        <img
+          :src="cardData.thumbnail"
+          class="rounded-full w-16 h-16 object-cover mr-4"
+        />
+        <div class="my-auto leading-3">
+          <div class="font-bold text-2xl font-lora">
+            {{ cardData.title }}
+          </div>
+          <div>
+            {{ cardData['sub-title'] }}
+          </div>
+        </div>
       </div>
+      <div class="mt-2 text-sm">
+        {{ cardData.description }}
+      </div>
+    </div>
+    <div class="p-4 border-t">
+      {{ cardData.footer }}
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    cardData: {
+      type: Object,
+      required: true,
+    },
+  },
+}
+</script>
