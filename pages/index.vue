@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen">
     <div class="flex my-auto mx-auto space-x-4">
-      <Card
+      <CardWrapper
         v-for="(card, index) in cards"
         :key="index"
         :card-data="cards[index]"
