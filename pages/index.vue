@@ -1,7 +1,11 @@
 <template>
   <div class="flex h-screen">
-    <div class="flex my-auto mx-auto space-x-4 max-w-3xl">
-      <Card v-for="(card, index) in cards" :key="index" :card-data="cards[0]" />
+    <div class="flex my-auto mx-auto space-x-4">
+      <Card
+        v-for="(card, index) in cards"
+        :key="index"
+        :card-data="cards[index]"
+      />
     </div>
   </div>
 </template>
@@ -26,7 +30,7 @@ export default {
           title: 'Location 2',
           'sub-title': 'California',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           footer: 'Kasa Living',
         },
       ],
