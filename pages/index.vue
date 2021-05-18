@@ -3,6 +3,7 @@
     <HeaderBase> Responsive Example </HeaderBase>
     <div
       class="
+        flex
         grid
         md:grid-cols-2
         xl:grid-cols-4
@@ -183,43 +184,6 @@
         </CardBody>
       </CardBase>
     </div>
-    <HeaderBase> Programmed Actions </HeaderBase>
-    <div
-      class="
-        grid
-        md:grid-cols-2
-        xl:grid-cols-4
-        gap-4
-        my-auto
-        mx-auto
-        justify-center
-      "
-    >
-      <CardBase @click.native="alert()">
-        <CardCover :cover="cards[1].cover" />
-        <CardDescription
-          :thumbnail="cards[1].thumbnail"
-          :title="cards[1].title"
-          :sub-title="cards[1]['sub-title']"
-        />
-        <CardBody> Click this card to trigger an alert! </CardBody>
-        <CardFooter>
-          {{ cards[1].footer }}
-        </CardFooter>
-      </CardBase>
-      <CardBase @click.native="log()">
-        <CardCover :cover="cards[1].cover" />
-        <CardDescription
-          :thumbnail="cards[1].thumbnail"
-          :title="cards[1].title"
-          :sub-title="cards[1]['sub-title']"
-        />
-        <CardBody> Click this card to trigger a console statement! </CardBody>
-        <CardFooter>
-          {{ cards[1].footer }}
-        </CardFooter>
-      </CardBase>
-    </div>
     <HeaderBase> Loading States </HeaderBase>
     <div
       class="
@@ -254,6 +218,63 @@
         <CardCover />
         <CardDescription />
         <CardBody />
+      </CardBase>
+    </div>
+    <HeaderBase> Programmed Actions </HeaderBase>
+    <div
+      class="
+        grid
+        md:grid-cols-2
+        xl:grid-cols-4
+        gap-4
+        my-auto
+        mx-auto
+        justify-center
+      "
+    >
+      <CardBase @click.native="alert()">
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="'Alert!'"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody> Click this card to trigger an alert! </CardBody>
+      </CardBase>
+      <CardBase @click.native="log()">
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="'Console Log!'"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody> Click this card to trigger a console statement! </CardBody>
+      </CardBase>
+      <NuxtLink to="/second">
+        <CardBase>
+          <CardCover :cover="cards[1].cover" />
+          <CardDescription
+            :thumbnail="cards[1].thumbnail"
+            :title="'Internal Page Navigation'"
+            :sub-title="cards[1]['sub-title']"
+          />
+          <CardBody>
+            This will use Nuxt's SPA to navigate to the next page and give a
+            page path linking on hovering.
+          </CardBody>
+        </CardBase>
+      </NuxtLink>
+      <CardBase @click.native="$router.push('/second')">
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="'Internal Page Navigation 2'"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody>
+          This will use Nuxt's SPA to navigate to the next page
+          <b class="font-bold">without</b> a page path linking on hovering.
+        </CardBody>
       </CardBase>
     </div>
   </div>

@@ -3,6 +3,7 @@
     class="
       focus:ring
       bg-white
+      active:bg-gray-50
       hover:bg-gray-50
       transition-colors
       flex-col

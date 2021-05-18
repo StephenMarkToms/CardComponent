@@ -14,7 +14,7 @@ module.exports = {
           50: '#1a5c8c',
         },
         tan: {
-          50: '#f9f3ee',
+          50: '#F9F3EE',
         },
       },
     },
