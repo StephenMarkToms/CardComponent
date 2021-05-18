@@ -30,7 +30,7 @@
     <HeaderBase> Horizontal Orientation </HeaderBase>
     <div class="flex mt-5 justify-center">
       <CardBase>
-        <CardCover />
+        <CardCover :cover="cards[1].cover" />
         <CardDescription
           :title="cards[1].title"
           :sub-title="cards[1]['sub-title']"
@@ -55,8 +55,8 @@
         justify-center
       "
     >
-      <CardBase class="max-w-xl">
-        <CardCover />
+      <CardBase>
+        <CardCover :cover="cards[1].cover" />
         <CardDescription
           :thumbnail="cards[1].thumbnail"
           :title="cards[1].title"
@@ -69,8 +69,8 @@
           {{ cards[1].footer }}
         </CardFooter>
       </CardBase>
-      <CardBase class="max-w-xl">
-        <CardCover />
+      <CardBase>
+        <CardCover :cover="cards[1].cover" />
         <CardDescription
           :thumbnail="cards[1].thumbnail"
           :title="cards[1].title"
@@ -83,12 +83,12 @@
           {{ cards[1].footer }}
         </CardFooter>
       </CardBase>
-      <CardBase class="max-w-xl">
+      <CardBase>
         <CardDescription
           :title="cards[1].title"
           :sub-title="cards[1]['sub-title']"
         />
-        <CardCover />
+        <CardCover :cover="cards[1].cover" />
         <CardBody>
           {{ cards[1].description }}
         </CardBody>
@@ -96,8 +96,8 @@
           {{ cards[1].footer }}
         </CardFooter>
       </CardBase>
-      <CardBase class="max-w-xl">
-        <CardCover />
+      <CardBase>
+        <CardCover :cover="cards[1].cover" />
         <CardDescription
           :title="cards[1].title"
           :sub-title="cards[1]['sub-title']"
@@ -110,54 +110,36 @@
     <HeaderBase> Loading States </HeaderBase>
     <div
       class="
-        grid
-        md:grid-cols-2
+        md:grid md:grid-cols-2
         xl:grid-cols-4
         gap-4
+        space-y-4
         my-auto
         mx-auto
         justify-center
       "
     >
-      <CardBase class="max-w-xl">
+      <CardBase>
         <CardCover />
-        <CardDescription
-          :thumbnail="cards[1].thumbnail"
-          :title="cards[1].title"
-          :sub-title="cards[1]['sub-title']"
-        />
+        <CardDescription :thumbnail="cards[1].thumbnail" />
         <CardBody />
-        <CardFooter>
-          {{ cards[1].footer }}
-        </CardFooter>
+        <CardFooter />
       </CardBase>
-      <CardBase class="max-w-xl">
+      <CardBase>
         <CardCover />
-        <CardDescription
-          :thumbnail="cards[1].thumbnail"
-          :title="cards[1].title"
-          :sub-title="cards[1]['sub-title']"
-        />
+        <CardDescription :thumbnail="cards[1].thumbnail" />
         <CardBody />
-        <CardFooter>
-          {{ cards[1].footer }}
-        </CardFooter>
+        <CardFooter />
       </CardBase>
-      <CardBase class="max-w-xl">
-        <CardDescription
-          :title="cards[1].title"
-          :sub-title="cards[1]['sub-title']"
-        />
+      <CardBase>
+        <CardDescription />
         <CardCover />
         <CardBody />
         <CardFooter />
       </CardBase>
-      <CardBase class="max-w-xl">
+      <CardBase>
         <CardCover />
-        <CardDescription
-          :title="cards[1].title"
-          :sub-title="cards[1]['sub-title']"
-        />
+        <CardDescription />
         <CardBody />
       </CardBase>
     </div>
