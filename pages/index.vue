@@ -107,6 +107,82 @@
         </CardBody>
       </CardBase>
     </div>
+    <HeaderBase> Variations </HeaderBase>
+    <div class="flex max-w-md my-auto mx-auto justify-center">
+      <CardBase>
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody>
+          {{ cards[1].description }}
+        </CardBody>
+      </CardBase>
+    </div>
+    <div class="flex max-w-md my-auto mx-auto justify-center mt-6">
+      <CardBase>
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+        />
+        <CardBody>
+          {{ cards[1].description }}
+        </CardBody>
+      </CardBase>
+    </div>
+    <div class="flex max-w-md my-auto mx-auto justify-center mt-6">
+      <CardBase>
+        <CardBody>
+          {{ cards[1].description }}
+        </CardBody>
+        <CardFooter>
+          {{ cards[1].footer }}
+        </CardFooter>
+      </CardBase>
+    </div>
+    <HeaderBase> Dynamic Content Examples </HeaderBase>
+    <div class="flex max-w-md my-auto mx-auto justify-center">
+      <CardBase>
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody>
+          <p>
+            Hello Kasa! This is some dynamic content here.
+            <a
+              href="https://www.kasa.com/"
+              target="_blank"
+              class="text-blue-50 underline"
+              >Click this link to open the Kasa homepage in a new tab!</a
+            >
+          </p>
+        </CardBody>
+      </CardBase>
+    </div>
+    <div class="flex max-w-md my-auto mx-auto justify-center mt-6">
+      <CardBase>
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody>
+          <p>
+            Feel free to place anything in here you want! Let's try an image!
+          </p>
+          <img
+            class="rounded-lg mt-5"
+            src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif"
+          />
+        </CardBody>
+      </CardBase>
+    </div>
     <HeaderBase> Loading States </HeaderBase>
     <div
       class="
