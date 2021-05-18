@@ -12,8 +12,8 @@
         justify-center
       "
     >
-      <CardWrapper v-for="(card, index) in cards" :key="index">
-        <CardCover />
+      <CardBase v-for="(card, index) in cards" :key="index">
+        <CardCover :cover="card.cover" />
         <CardDescription
           :thumbnail="card.thumbnail"
           :title="card.title"
@@ -25,11 +25,11 @@
         <CardFooter>
           {{ card.footer }}
         </CardFooter>
-      </CardWrapper>
+      </CardBase>
     </div>
     <HeaderBase> Horizontal Orientation </HeaderBase>
     <div class="flex mt-5 justify-center">
-      <CardWrapper>
+      <CardBase>
         <CardCover />
         <CardDescription
           :title="cards[1].title"
@@ -41,9 +41,9 @@
         <CardFooter>
           {{ cards[1].footer }}
         </CardFooter>
-      </CardWrapper>
+      </CardBase>
     </div>
-    <HeaderBase> Flexible Application of Sub Pieces </HeaderBase>
+    <HeaderBase> Flexible Application of Sub Components </HeaderBase>
     <div
       class="
         grid
@@ -55,7 +55,7 @@
         justify-center
       "
     >
-      <CardWrapper class="max-w-xl">
+      <CardBase class="max-w-xl">
         <CardCover />
         <CardDescription
           :thumbnail="cards[1].thumbnail"
@@ -68,8 +68,8 @@
         <CardFooter>
           {{ cards[1].footer }}
         </CardFooter>
-      </CardWrapper>
-      <CardWrapper class="max-w-xl">
+      </CardBase>
+      <CardBase class="max-w-xl">
         <CardCover />
         <CardDescription
           :thumbnail="cards[1].thumbnail"
@@ -82,8 +82,8 @@
         <CardFooter>
           {{ cards[1].footer }}
         </CardFooter>
-      </CardWrapper>
-      <CardWrapper class="max-w-xl">
+      </CardBase>
+      <CardBase class="max-w-xl">
         <CardDescription
           :title="cards[1].title"
           :sub-title="cards[1]['sub-title']"
@@ -95,8 +95,8 @@
         <CardFooter>
           {{ cards[1].footer }}
         </CardFooter>
-      </CardWrapper>
-      <CardWrapper class="max-w-xl">
+      </CardBase>
+      <CardBase class="max-w-xl">
         <CardCover />
         <CardDescription
           :title="cards[1].title"
@@ -105,7 +105,61 @@
         <CardBody>
           {{ cards[1].description }}
         </CardBody>
-      </CardWrapper>
+      </CardBase>
+    </div>
+    <HeaderBase> Loading States </HeaderBase>
+    <div
+      class="
+        grid
+        md:grid-cols-2
+        xl:grid-cols-4
+        gap-4
+        my-auto
+        mx-auto
+        justify-center
+      "
+    >
+      <CardBase class="max-w-xl">
+        <CardCover />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody />
+        <CardFooter>
+          {{ cards[1].footer }}
+        </CardFooter>
+      </CardBase>
+      <CardBase class="max-w-xl">
+        <CardCover />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody />
+        <CardFooter>
+          {{ cards[1].footer }}
+        </CardFooter>
+      </CardBase>
+      <CardBase class="max-w-xl">
+        <CardDescription
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardCover />
+        <CardBody />
+        <CardFooter />
+      </CardBase>
+      <CardBase class="max-w-xl">
+        <CardCover />
+        <CardDescription
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody />
+      </CardBase>
     </div>
   </div>
 </template>
