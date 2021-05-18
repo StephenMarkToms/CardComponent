@@ -1,6 +1,7 @@
 <template>
   <div
     class="
+      focus:ring
       bg-white
       hover:bg-gray-50
       transition-colors

@@ -183,6 +183,43 @@
         </CardBody>
       </CardBase>
     </div>
+    <HeaderBase> Programmed Actions </HeaderBase>
+    <div
+      class="
+        grid
+        md:grid-cols-2
+        xl:grid-cols-4
+        gap-4
+        my-auto
+        mx-auto
+        justify-center
+      "
+    >
+      <CardBase @click.native="alert()">
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody> Click this card to trigger an alert! </CardBody>
+        <CardFooter>
+          {{ cards[1].footer }}
+        </CardFooter>
+      </CardBase>
+      <CardBase @click.native="log()">
+        <CardCover :cover="cards[1].cover" />
+        <CardDescription
+          :thumbnail="cards[1].thumbnail"
+          :title="cards[1].title"
+          :sub-title="cards[1]['sub-title']"
+        />
+        <CardBody> Click this card to trigger a console statement! </CardBody>
+        <CardFooter>
+          {{ cards[1].footer }}
+        </CardFooter>
+      </CardBase>
+    </div>
     <HeaderBase> Loading States </HeaderBase>
     <div
       class="
@@ -265,6 +302,19 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    alert() {
+      if (process.client) {
+        alert('You clicked that card!')
+      }
+    },
+    log() {
+      if (process.client) {
+        // eslint-disable-next-line no-console
+        console.log('You clicked that card!')
+      }
+    },
   },
 }
 </script>
